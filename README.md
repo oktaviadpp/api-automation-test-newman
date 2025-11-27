@@ -24,11 +24,22 @@ If you already have Node.js installed, simply run:
 
 ```bash
 npm install -g newman
+```
 
 This installs Newman globally so you can run it from anywhere.
 
 ```bash
 npm install -g newman-reporter-htmlextra
+```
+---
+
+## 📊 Running With HTML Report
+
+```bash
+newman run <collection> -d <test case_file.csv> -r htmlextra --reporter-htmlextra-title "<newman_title>"  --reporter-htmlextra-browserTitle "<browser_title>"
+```
+
+---
 
 ## 🏗 Project Structure
 
