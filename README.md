@@ -38,6 +38,12 @@ npm install -g newman-reporter-htmlextra
 ```bash
 newman run <collection> -d <test case_file.csv> -r htmlextra --reporter-htmlextra-title "<newman_title>"  --reporter-htmlextra-browserTitle "<browser_title>"
 ```
+---
+
+## 📷 Capture Report
+Below is an example of the generated HTML report:
+
+![HTML Report Example](Test/Create Product/Capture Report Automation Create Product.png)
 
 ---
 
