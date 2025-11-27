@@ -17,5 +17,19 @@ This project also supports **dynamic data testing** using **CSV data files**, al
 
 ---
 
+## 🧩 Installation
+
+The easiest way to install Newman is using **NPM**.  
+If you already have Node.js installed, simply run:
+
+```bash
+npm install -g newman
+
+This installs Newman globally so you can run it from anywhere.
+
+```bash
+npm install -g newman-reporter-htmlextra
+
 ## 🏗 Project Structure
+
 
