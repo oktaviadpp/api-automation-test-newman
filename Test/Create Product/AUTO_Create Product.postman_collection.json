@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "4c4a15fd-79fe-4953-8a8b-f0f9028a1408",
+		"name": "AUTO_Create Product",
+		"description": "Complete API collection for Paragon Beauty Store - Phase 1: Core System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49253972"
+	},
+	"item": [
+		{
+			"name": "2. Create Product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(pm.iterationData.get(\"Skenario_Test\")+\" [RC \"+pm.iterationData.get(\"rsp\")+\"]\", function () {",
+							"    const jsonData = pm.response.json();",
+							"    pm.expect(jsonData.responseCode).to.eql(pm.iterationData.get(\"rsp\")); ",
+							"});",
+							"",
+							"// const jsonData = pm.response.json();",
+							"// console.log(\"rsp\", jsonData.responseCode);"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"brand_id\": \"{{brand_id}}\",\n  \"category_id\": \"{{category_id}}\",\n  \"name\": \"{{name}}\",\n  \"description\": \"{{description}}\",\n  \"base_price\": {{base_price}},\n  \"sku\": \"{{sku}}\",\n  \"weight\": {{weight}},\n  \"halal_certified\": true\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{adminToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"requests": {},
+				"exec": [
+					"// Generate unique test data using timestamp",
+					"const timestamp = Date.now();",
+					"const randomNum = Math.floor(Math.random() * 10000);",
+					"",
+					"// Set dynamic variables for unique test data",
+					"pm.collectionVariables.set('uniqueTimestamp', timestamp);",
+					"pm.collectionVariables.set('uniqueRandom', randomNum);",
+					"pm.collectionVariables.set('uniqueEmail', `customer.${timestamp}@example.com`);",
+					"pm.collectionVariables.set('uniqueName', `Test Customer ${timestamp}`);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "uniqueTimestamp",
+			"value": "1764215940342"
+		},
+		{
+			"key": "uniqueRandom",
+			"value": "2706"
+		},
+		{
+			"key": "uniqueEmail",
+			"value": "customer.1764215940342@example.com"
+		},
+		{
+			"key": "uniqueName",
+			"value": "Test Customer 1764215940342"
+		},
+		{
+			"key": "userIds",
+			"value": ""
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://paragon.aforsy.my.id/api/v1"
+		}
+	]
+}
