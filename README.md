@@ -43,7 +43,7 @@ newman run <collection> -d <test case_file.csv> -r htmlextra --reporter-htmlextr
 ## 📷 Capture Report
 Below is an example of the generated HTML report:
 
-![HTML Report Example](Test/Create Product/Capture Report Automation Create Product.png)
+![HTML Report Example](Test/Create%20Product/Capture%20Report%20Automation%20Create%20Product.png)
 
 ---
 
